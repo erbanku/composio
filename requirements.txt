@@ -1,0 +1,5 @@
+--no-index
+--find-links ./vendor/wheels/linux-amd64
+--find-links ./vendor/wheels/linux-arm64
+dify-plugin>=0.5.0,<0.6.0
+httpx>=0.28.1,<0.29.0

@@ -1,0 +1,33 @@
+identity:
+  author: "erbanku"
+  name: "composio"
+  label:
+    en_US: "Composio"
+  description:
+    en_US: "Native Composio sessions: discover app tools, connect accounts, and execute actions from Dify."
+  icon: "icon.png"
+  tags:
+    - "productivity"
+    - "utilities"
+tools:
+  - "tools/close_session.yaml"
+  - "tools/create_session.yaml"
+  - "tools/search_tools.yaml"
+  - "tools/get_tool_schemas.yaml"
+  - "tools/connect_toolkit.yaml"
+  - "tools/execute_tool.yaml"
+  - "tools/execute_batch.yaml"
+  - "tools/inspect_session.yaml"
+  - "tools/execute_meta_tool.yaml"
+extra:
+  python:
+    source: "provider/composio.py"
+credentials_for_provider:
+  api_key:
+    type: "secret-input"
+    required: true
+    label:
+      en_US: "Composio API Key"
+    help:
+      en_US: "Use a Composio project API key with session and toolkit read permissions."
+    url: "https://dashboard.composio.dev"

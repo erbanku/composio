@@ -1,0 +1,44 @@
+identity:
+  author: "erbanku"
+  name: "create_session"
+  label:
+    en_US: "Create Session"
+description:
+  human:
+    en_US: "create_session"
+  llm: "Create a Composio session once at the start of a conversation. Reuse the returned session_id for all later calls. Do not create another session after the user connects an app."
+parameters:
+  - name: "user_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "User ID"
+    form: "form"
+    human_description:
+      en_US: "Bind to a trusted authenticated user ID, such as sys.user_id. Never let the model choose this."
+  - name: "toolkits"
+    type: "string"
+    required: false
+    label:
+      en_US: "Allowed Toolkits"
+    form: "form"
+    human_description:
+      en_US: "Comma-separated slugs, e.g. gmail,github,slack. Empty allows all toolkits."
+  - name: "config"
+    type: "string"
+    required: false
+    label:
+      en_US: "Advanced Session JSON"
+    form: "form"
+    human_description:
+      en_US: "Optional v3.1 session settings: auth_configs, connected_accounts, tools, tags, workbench, multi_account, manage_connections, preload, search, execute. Remote workbench is off by default."
+output_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+    success:
+      type: boolean
+extra:
+  python:
+    source: "tools/create_session.py"

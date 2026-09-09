@@ -1,0 +1,37 @@
+identity:
+  name: close_session
+  author: erbanku
+  label:
+    en_US: Close Session
+description:
+  human:
+    en_US: Delete a completed Composio session and free its local binding.
+  llm: Delete a session only when the user confirms it is no longer needed. This removes its execution context; do not close sessions awaiting account connection or further conversation.
+parameters:
+  - name: user_id
+    type: string
+    required: true
+    form: form
+    label:
+      en_US: User ID
+    human_description:
+      en_US: Same trusted user ID used to create the session.
+  - name: session_id
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Session ID
+    human_description:
+      en_US: Session ID to delete permanently.
+    llm_description: The existing session_id whose execution context the user confirmed can be deleted.
+output_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+    success:
+      type: boolean
+extra:
+  python:
+    source: tools/close_session.py

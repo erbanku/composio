@@ -1,0 +1,46 @@
+identity:
+  author: "erbanku"
+  name: "get_tool_schemas"
+  label:
+    en_US: "Get Tool Schemas"
+description:
+  human:
+    en_US: "get_tool_schemas"
+  llm: "Get exact input/output schemas for discovered tool slugs before execution. Reuse schemas in conversation instead of fetching them repeatedly."
+parameters:
+  - name: "user_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "User ID"
+    form: "form"
+    human_description:
+      en_US: "Same trusted user ID used to create the session."
+  - name: "session_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Session ID"
+    form: "llm"
+    human_description:
+      en_US: "ID returned by Create Session."
+    llm_description: "Existing session_id."
+  - name: "tool_slugs"
+    type: "string"
+    required: true
+    label:
+      en_US: "Tool Slugs"
+    form: "llm"
+    human_description:
+      en_US: "Comma-separated exact tool slugs."
+    llm_description: "Comma-separated slugs returned by search; never invent them."
+output_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+    success:
+      type: boolean
+extra:
+  python:
+    source: "tools/get_tool_schemas.py"

@@ -1,0 +1,54 @@
+identity:
+  author: "erbanku"
+  name: "connect_toolkit"
+  label:
+    en_US: "Connect App"
+description:
+  human:
+    en_US: "connect_toolkit"
+  llm: "Create a connection link for an app. Show redirect_url to the user, then STOP and wait for them to connect. Never open it yourself or claim authentication succeeded. Reuse the same session afterwards."
+parameters:
+  - name: "user_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "User ID"
+    form: "form"
+    human_description:
+      en_US: "Same trusted user ID used to create the session."
+  - name: "session_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Session ID"
+    form: "llm"
+    human_description:
+      en_US: "ID returned by Create Session."
+    llm_description: "Existing session_id."
+  - name: "toolkit"
+    type: "string"
+    required: true
+    label:
+      en_US: "Toolkit"
+    form: "llm"
+    human_description:
+      en_US: "App slug, e.g. gmail."
+    llm_description: "Exact toolkit slug returned by search."
+  - name: "callback_url"
+    type: "string"
+    required: false
+    label:
+      en_US: "Return URL"
+    form: "form"
+    human_description:
+      en_US: "Optional HTTPS URL after the user connects."
+output_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+    success:
+      type: boolean
+extra:
+  python:
+    source: "tools/connect_toolkit.py"

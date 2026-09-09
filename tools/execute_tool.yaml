@@ -1,0 +1,64 @@
+identity:
+  author: "erbanku"
+  name: "execute_tool"
+  label:
+    en_US: "Execute Tool"
+description:
+  human:
+    en_US: "execute_tool"
+  llm: "Execute a discovered app tool using its exact input schema. Ask for confirmation before sending, creating, updating, or deleting data. Never retry a timed-out write automatically: its outcome is unknown. Meta tools use Execute Meta Tool instead."
+parameters:
+  - name: "user_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "User ID"
+    form: "form"
+    human_description:
+      en_US: "Same trusted user ID used to create the session."
+  - name: "session_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Session ID"
+    form: "llm"
+    human_description:
+      en_US: "ID returned by Create Session."
+    llm_description: "Existing session_id."
+  - name: "tool_slug"
+    type: "string"
+    required: true
+    label:
+      en_US: "Tool Slug"
+    form: "llm"
+    human_description:
+      en_US: "Exact app action slug."
+    llm_description: "Exact app tool slug discovered via search or schemas."
+  - name: "arguments"
+    type: "string"
+    required: false
+    label:
+      en_US: "Arguments JSON"
+    form: "llm"
+    human_description:
+      en_US: "JSON object matching the action schema."
+    llm_description: "Valid JSON object using exact schema field names and types."
+    default: "{}"
+  - name: "account"
+    type: "string"
+    required: false
+    label:
+      en_US: "Connected Account"
+    form: "form"
+    human_description:
+      en_US: "Optional account ID or alias. Pin for deterministic multi-account workflows."
+output_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+    success:
+      type: boolean
+extra:
+  python:
+    source: "tools/execute_tool.py"

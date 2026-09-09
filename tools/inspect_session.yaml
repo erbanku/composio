@@ -1,0 +1,72 @@
+identity:
+  author: "erbanku"
+  name: "inspect_session"
+  label:
+    en_US: "Inspect Session"
+description:
+  human:
+    en_US: "inspect_session"
+  llm: "Inspect session tools or toolkit connection status. Use toolkit status after a user completes a Connect Link; do not repeatedly poll. Tool schemas document advanced meta-tool arguments."
+parameters:
+  - name: "user_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "User ID"
+    form: "form"
+    human_description:
+      en_US: "Same trusted user ID used to create the session."
+  - name: "session_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Session ID"
+    form: "llm"
+    human_description:
+      en_US: "ID returned by Create Session."
+    llm_description: "Existing session_id."
+  - name: "view"
+    type: "select"
+    required: true
+    label:
+      en_US: "View"
+    form: "llm"
+    human_description:
+      en_US: "Choose connection status or schemas."
+    llm_description: "toolkits for app connections, tools for live session tool schemas."
+    options:
+      - value: "toolkits"
+        label:
+          en_US: "Apps and Connections"
+      - value: "tools"
+        label:
+          en_US: "Session Tool Schemas"
+    default: "toolkits"
+  - name: cursor
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Page Cursor
+    human_description:
+      en_US: Use next_cursor from the previous response.
+    llm_description: Pass next_cursor to fetch the next page; omit for the first page.
+  - name: toolkit
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Toolkit Filter
+    human_description:
+      en_US: Optional app slug to check a specific connection; toolkits view only.
+    llm_description: Exact toolkit slug, such as gmail; only for the toolkits view.
+output_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+    success:
+      type: boolean
+extra:
+  python:
+    source: "tools/inspect_session.py"

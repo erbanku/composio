@@ -1,0 +1,46 @@
+identity:
+  author: "erbanku"
+  name: "execute_batch"
+  label:
+    en_US: "Execute Batch"
+description:
+  human:
+    en_US: "execute_batch"
+  llm: "Run independent actions in parallel. Do not batch actions that depend on another result. Confirm writes first. Inspect each result: batches can partially fail. Never replay an entire partially failed or timed-out batch."
+parameters:
+  - name: "user_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "User ID"
+    form: "form"
+    human_description:
+      en_US: "Same trusted user ID used to create the session."
+  - name: "session_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Session ID"
+    form: "llm"
+    human_description:
+      en_US: "ID returned by Create Session."
+    llm_description: "Existing session_id."
+  - name: "tools"
+    type: "string"
+    required: true
+    label:
+      en_US: "Actions JSON"
+    form: "llm"
+    human_description:
+      en_US: "Array of objects with tool_slug and arguments; optional account."
+    llm_description: "JSON array of 1-50 independent app actions, each with tool_slug and arguments object; optional account ID or alias."
+output_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+    success:
+      type: boolean
+extra:
+  python:
+    source: "tools/execute_batch.py"

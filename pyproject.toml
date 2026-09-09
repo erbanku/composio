@@ -1,0 +1,163 @@
+[project]
+name = "dify-composio"
+version = "0.0.2"
+description = "Composio Dify plugin"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "dify-plugin>=0.5.0,<0.6.0",
+    "httpx>=0.28.1,<0.29.0"
+]
+
+[tool.uv.sources]
+"Flask" = [
+    { path = "./vendor/wheels/linux-amd64/flask-3.0.3-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/flask-3.0.3-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"Jinja2" = [
+    { path = "./vendor/wheels/linux-amd64/jinja2-3.1.6-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/jinja2-3.1.6-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"MarkupSafe" = [
+    { path = "./vendor/wheels/linux-amd64/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/markupsafe-3.0.3-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"PyYAML" = [
+    { path = "./vendor/wheels/linux-amd64/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/pyyaml-6.0.3-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"Werkzeug" = [
+    { path = "./vendor/wheels/linux-amd64/werkzeug-3.0.6-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/werkzeug-3.0.6-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"annotated-types" = [
+    { path = "./vendor/wheels/linux-amd64/annotated_types-0.8.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/annotated_types-0.8.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"anyio" = [
+    { path = "./vendor/wheels/linux-amd64/anyio-4.15.1-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/anyio-4.15.1-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"blinker" = [
+    { path = "./vendor/wheels/linux-amd64/blinker-1.9.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/blinker-1.9.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"certifi" = [
+    { path = "./vendor/wheels/linux-amd64/certifi-2026.7.22-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/certifi-2026.7.22-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"charset-normalizer" = [
+    { path = "./vendor/wheels/linux-amd64/charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/charset_normalizer-3.5.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"click" = [
+    { path = "./vendor/wheels/linux-amd64/click-8.5.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/click-8.5.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"dify_plugin" = [
+    { path = "./vendor/wheels/linux-amd64/dify_plugin-0.5.1-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/dify_plugin-0.5.1-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"dpkt" = [
+    { path = "./vendor/wheels/linux-amd64/dpkt-1.9.8-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/dpkt-1.9.8-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"gevent" = [
+    { path = "./vendor/wheels/linux-amd64/gevent-25.5.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/gevent-25.5.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"greenlet" = [
+    { path = "./vendor/wheels/linux-amd64/greenlet-3.2.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/greenlet-3.2.5-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"h11" = [
+    { path = "./vendor/wheels/linux-amd64/h11-0.16.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/h11-0.16.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"httpcore" = [
+    { path = "./vendor/wheels/linux-amd64/httpcore-1.0.9-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/httpcore-1.0.9-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"httpx" = [
+    { path = "./vendor/wheels/linux-amd64/httpx-0.28.1-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/httpx-0.28.1-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"idna" = [
+    { path = "./vendor/wheels/linux-amd64/idna-3.19-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/idna-3.19-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"itsdangerous" = [
+    { path = "./vendor/wheels/linux-amd64/itsdangerous-2.2.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/itsdangerous-2.2.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"multidict" = [
+    { path = "./vendor/wheels/linux-amd64/multidict-6.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/multidict-6.7.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"packaging" = [
+    { path = "./vendor/wheels/linux-amd64/packaging-26.3-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/packaging-26.3-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"propcache" = [
+    { path = "./vendor/wheels/linux-amd64/propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/propcache-0.5.2-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"pydantic" = [
+    { path = "./vendor/wheels/linux-amd64/pydantic-2.13.5-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/pydantic-2.13.5-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"pydantic-settings" = [
+    { path = "./vendor/wheels/linux-amd64/pydantic_settings-2.15.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/pydantic_settings-2.15.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"pydantic_core" = [
+    { path = "./vendor/wheels/linux-amd64/pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"python-dotenv" = [
+    { path = "./vendor/wheels/linux-amd64/python_dotenv-1.2.3-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/python_dotenv-1.2.3-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"regex" = [
+    { path = "./vendor/wheels/linux-amd64/regex-2026.9.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/regex-2026.9.3-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"requests" = [
+    { path = "./vendor/wheels/linux-amd64/requests-2.32.5-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/requests-2.32.5-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"socksio" = [
+    { path = "./vendor/wheels/linux-amd64/socksio-1.0.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/socksio-1.0.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"tiktoken" = [
+    { path = "./vendor/wheels/linux-amd64/tiktoken-0.8.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/tiktoken-0.8.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"typing-inspection" = [
+    { path = "./vendor/wheels/linux-amd64/typing_inspection-0.4.4-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/typing_inspection-0.4.4-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"typing_extensions" = [
+    { path = "./vendor/wheels/linux-amd64/typing_extensions-4.16.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/typing_extensions-4.16.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"urllib3" = [
+    { path = "./vendor/wheels/linux-amd64/urllib3-2.7.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/urllib3-2.7.0-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"yarl" = [
+    { path = "./vendor/wheels/linux-amd64/yarl-1.24.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/yarl-1.24.5-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"zope.event" = [
+    { path = "./vendor/wheels/linux-amd64/zope_event-6.2-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/zope_event-6.2-py3-none-any.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+"zope.interface" = [
+    { path = "./vendor/wheels/linux-amd64/zope_interface-8.6-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" },
+    { path = "./vendor/wheels/linux-arm64/zope_interface-8.6-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", marker = "sys_platform == 'linux' and platform_machine == 'aarch64'" },
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3.0", "pyyaml>=6.0.2"]
