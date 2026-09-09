@@ -7,6 +7,9 @@ label:
 description:
   en_US: "Native Composio sessions: discover app tools, connect accounts, and execute actions from Dify."
 icon: "icon.png"
+privacy: PRIVACY.md
+repo: https://github.com/erbanku/composio
+contact: 79493862+erbanku@users.noreply.github.com
 resource:
   memory: 268435456
   permission:
